@@ -18,6 +18,7 @@ const App = (props) => {
       setMovies(data)
     })
   },[])
+  
   return(
     <Router>
     <div>
