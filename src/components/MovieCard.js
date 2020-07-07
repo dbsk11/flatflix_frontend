@@ -13,12 +13,10 @@ const MovieCard = (props) => {
 
     return(
         <div className='movieCard' onClick={handleClick}>
-            <img 
-                className="picture" 
-                src={props.movie.poster_url} 
-                alt={props.movie.title}
-                />
-            <p className='title'>{props.movie.title}</p>
+            <img className="picture" src={props.movie.poster_url} alt={props.movie.title}/>
+            <div className='overlay'>
+                <p className='title'>{props.movie.title}</p>
+            </div>
         </div>
     );
 };

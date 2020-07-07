@@ -1,6 +1,6 @@
 .picture {
-  height: 150px;
-  width: 100px;
+  height: auto;
+  width: 100%;
 }
 .allmovies {
   display: flex;
@@ -10,7 +10,42 @@
   display: flex;
 }
 
+<<<<<<< HEAD
 .viewpagepicture {
   height: 400px;
   width: 280px;
 }
+=======
+.movieCard {
+  position: relative;
+  text-align: center;
+  color: white;
+  transition: transform 0.2s;
+}
+.movieCard:hover {
+  z-index: 2;
+  transform: scale(1.2);
+}
+.movieCard .overlay {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}
+.movieCard img {
+  display: block;
+  position: relative;
+}
+.movieCard:hover .overlay {
+  visibility: visible;
+}
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+>>>>>>> 52cdfd5127b2bdc0937aaa50211f66ff92d85f25
