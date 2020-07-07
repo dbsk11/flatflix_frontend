@@ -1,10 +1,10 @@
 import React,{ useState, useEffect } from 'react';
 import './App.css';
-import Header from './components/Header';
-import NavBar from './components/NavBar';
+import Header from './headers/Header';
+import NavBar from './headers/NavBar';
 import RowContainer from './components/RowContainer';
-import Login from './components/Login';
-import Profile from './components/Profile';
+import Login from './headers/Login';
+import Profile from './headers/Profile';
 
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 
@@ -18,13 +18,13 @@ const App = (props) => {
       setMovies(data)
     })
   },[])
-  
+
   return(
     <Router>
     <div>
       <Header />
       <NavBar />
-      <Route exact path="/movies" component={()=><RowContainer movies={movies}/>} />
+      <Route exact path="/movies" component={()=><RowContainer genres={movies}/>} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/profile" component={Profile} />
     </div>

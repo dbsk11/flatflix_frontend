@@ -1,13 +1,13 @@
 import React from 'react';
 import MovieCard from './MovieCard'
 import MovieView from './MovieView'
-import Row from './Row'
+import GenreRow from './GenreRow'
 
 //renders movie tile rows
 const RowContainer = (props) => {
     return(
-        <div className='row'>{props.movies.map(movie=>{
-            return <Row movie={movie} key={movie.id}/>
+        <div className='allmovies'>{props.genres.map(genre=>{
+            return <GenreRow genre={genre} key={genre.id}/>
         })}</div>
     );
 };
