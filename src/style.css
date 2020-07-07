@@ -1,25 +1,86 @@
+/* main heading */
+.heading{
+  display: flex;
+  height: 15vh;
+  width: 98vw;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  height: 10vh;
+  width: 98vw;
+  background: lightblue;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  height: 5vh;
+  width: 98vw;
+  background: lightblue;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* login page */
+/* .form{
+  login page
+} */
+
+/* profile page */
+.profile{
+  display: flex;
+  height: 75vh;
+  width: 98vw;
+  background: lightblue;
+  flex-direction: column;
+  align-items: center
+}
+
+/* rowcontainer */
+.allmovies {
+  display: flex;
+  flex-direction: column;
+  width: 98vw;
+}
+
 .picture {
   height: auto;
   width: 100%;
 }
-.allmovies {
-  display: flex;
-  flex-direction: column;
-}
+
+/* genre row */
 .genre {
   display: flex;
 }
 
+#genre h4 {
+  font-weight: 750;
+  font-style: normal;
+  color: #FF0000;
+  text-align: center;
+  font-family: 'Gill Sans', sans-serif;
+}
+
+/* moviecard */
 .movieCard {
   position: relative;
   text-align: center;
   color: white;
   transition: transform 0.2s;
 }
+
 .movieCard:hover {
   z-index: 2;
   transform: scale(1.2);
 }
+
 .movieCard .overlay {
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
@@ -29,13 +90,16 @@
   left: 0;
   visibility: hidden;
 }
+
 .movieCard img {
   display: block;
   position: relative;
 }
+
 .movieCard:hover .overlay {
   visibility: visible;
 }
+
 .title {
   position: absolute;
   top: 50%;
@@ -43,35 +107,16 @@
   transform: translate(-50%, -50%);
 }
 
+/* movie view page */
+.player{
+  display: flex;
+}
+
 .viewpagepicture {
   height: 200px;
   width: 140px;
 }
-.player{
-  display: flex;
-}
 .movieInfo{
   display: flex;
   flex-direction: column; 
-}
-
-
-.heading{
-  display: flex;
-  height: 15vh;
-  width: 95vh;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.header {
-  
-}
-.movieView{
-
-}
-.movieSections{
-  display: flex;
-  flex-direction: row;
 }

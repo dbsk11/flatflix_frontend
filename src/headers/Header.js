@@ -5,7 +5,7 @@ const Header = () => {
     // Flatflix name
     return (
         <div className="header">
-            <h1>Flatflix</h1>
+            <h1>FLATFLIX</h1>
             <img src="../images/logo" alt="Flatflix" id="main-header"/>
         </div>  
     )

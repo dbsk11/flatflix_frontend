@@ -8,7 +8,7 @@ const Login = (props) => {
     return (
       <form>
         <h1>Login</h1>
-        <div>
+        <div className="form">
           <label htmlFor="username">Username: </label>
           <input type="text" name="username" placeholder="Username" />
         </div>

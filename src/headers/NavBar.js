@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 const NavBar = (props) => {
     // need to add conditional for Log In <=> Log Out
     return(
-        <div>
+        <div className="navbar">
         <NavLink 
             to="/movies"
             exact
