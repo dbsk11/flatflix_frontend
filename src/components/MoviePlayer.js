@@ -6,7 +6,7 @@ const MoviePlayer = (props) => {
     // full screen option
     // pause and play option 
     return(
-        <div>MoviePlayer</div>
+        <div className="player">MoviePlayer</div>
     );
 };
 

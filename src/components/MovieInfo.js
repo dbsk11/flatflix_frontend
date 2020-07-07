@@ -5,7 +5,7 @@ const MovieInfo = (props) => {
     //displays information for selected movie 
     const {director, plot, year, rating, runtime, released, imdbRating, poster_url, title} = props.movie
     return(
-        <div>
+        <div className="movieInfo">
             <img className="viewpagepicture" src={poster_url} alt={title} />
             <h3>Director: {director}</h3>
             <h3>Plot: {plot}</h3>

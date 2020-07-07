@@ -2,6 +2,7 @@ import React, { useState, useEffect }  from 'react';
 import MovieCard from './MovieCard'
 import MovieView from './MovieView'
 import GenreRow from './GenreRow'
+import "../style.css"
 
 //renders movie tile rows
 const RowContainer = (props) => {
@@ -28,7 +29,7 @@ const RowContainer = (props) => {
     return(
         showMovie
         ? 
-        <MovieView movie={movieObj}/>
+        <MovieView movie={movieObj} setShowMovie={setShowMovie}/>
         :
         <div className='allmovies'>{genres.map(genre=>
             <GenreRow genre={genre} movies={[...movies[`${genre}`]]} key={genre.id} setShowMovie={setShowMovie} showMoviePage={showMoviePage}/>

@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import MovieCard from './MovieCard'
 import MovieView from './MovieView'
-import "../style.css"
 
 //renders movie tile rows
 const GenreRow = (props) => {
@@ -32,8 +31,8 @@ const GenreRow = (props) => {
 
     return(
         <div className="genre">
-            <button onClick={seeLess}>Go back!</button>
             <h4>{props.genre}</h4>
+            <button onClick={seeLess}>Go back!</button>
             {arrayOfMovies}
             <button onClick={seeMore}>See More!</button>
         </div>

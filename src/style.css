@@ -10,12 +10,6 @@
   display: flex;
 }
 
-<<<<<<< HEAD
-.viewpagepicture {
-  height: 400px;
-  width: 280px;
-}
-=======
 .movieCard {
   position: relative;
   text-align: center;
@@ -48,4 +42,35 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
->>>>>>> 52cdfd5127b2bdc0937aaa50211f66ff92d85f25
+.viewpagepicture {
+  height: 200px;
+  width: 140px;
+}
+.player{
+  display: flex;
+}
+.movieInfo{
+  display: flex;
+  flex-direction: column; 
+}
+
+
+.heading{
+  display: flex;
+  height: 15vh;
+  width: 95vh;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  
+}
+.movieView{
+
+}
+.movieSections{
+  display: flex;
+  flex-direction: row;
+}
