@@ -8,9 +8,9 @@ const MovieCard = (props) => {
     // handleClick, onClick, onHover - for adding and removing movie from queue
     // onClick to render MovieView page for specific movie
     return(
-        <div>
+        <div className='movieCard'>
             <img className="picture" src={props.movie.poster_url} alt={props.movie.title}/>
-            {props.movie.title}
+            <p className='title'>{props.movie.title}</p>
         </div>
     );
 };

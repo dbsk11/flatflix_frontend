@@ -1,4 +1,11 @@
 .picture {
-    height: 150px;
-    width: 100px
+  height: 150px;
+  width: 100px;
+}
+.allmovies {
+  display: flex;
+  flex-direction: column;
+}
+.genre {
+  display: flex;
 }

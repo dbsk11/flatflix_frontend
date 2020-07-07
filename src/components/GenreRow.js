@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import MovieCard from './MovieCard'
 import MovieView from './MovieView'
 import "../style.css"
@@ -11,8 +11,7 @@ const GenreRow = (props) => {
 
     const [startPosition, setStartPosition] = useState(0)
 
-
-    let arrayOfMovies = props.genre.slice(startPosition, startPosition + 6).map((moviePOJO) => {
+    let arrayOfMovies = props.movies.slice(startPosition, startPosition + 6).map((moviePOJO) => {
         return <MovieCard
             movie={moviePOJO}
             key={moviePOJO.id}
@@ -30,6 +29,7 @@ const GenreRow = (props) => {
     return(
         <div className="genre">
             <button onClick={seeLess}>Go back!</button>
+            <h4>{props.genre}</h4>
             {arrayOfMovies}
             <button onClick={seeMore}>See More!</button>
         </div>
