@@ -8,7 +8,6 @@ import Profile from './headers/Profile';
 
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 
-
 const App = (props) => {
 
   return(

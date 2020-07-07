@@ -7,9 +7,9 @@ const MovieView = (props) => {
     // show details about individual movie 
     return(
         <div>
-            <h1>Movie Title</h1>
-            MoviePlayer
-            MovieInfo
+            <h1>{props.movie.title}</h1>
+            <MoviePlayer movie={props.movie}/>
+            <MovieInfo movie={props.movie}/>
         </div>
     );
 };

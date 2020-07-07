@@ -5,24 +5,28 @@ import "../style.css"
 
 //renders movie tile rows
 const GenreRow = (props) => {
-    // conditional to show a certain number of movies and 'show more' 
-    // queued movies list 
-    // additional rows by genre 
+    // need to add users queue
 
+    //set initial state
     const [startPosition, setStartPosition] = useState(0)
 
-    let arrayOfMovies = props.movies.slice(startPosition, startPosition + 6).map((moviePOJO) => {
+    //map through array to pull out individual movies
+    const arrayOfMovies = props.movies.slice(startPosition, startPosition + 6).map((moviePOJO) => {
         return <MovieCard
             movie={moviePOJO}
             key={moviePOJO.id}
+            setShowMovie={props.setShowMovie}
+            showMoviePage={props.showMoviePage}
         />
     })
 
-    let seeMore = () => {
+    //shows 7 more films
+    const seeMore = () => {
         setStartPosition(startPosition + 7) 
     }
 
-    let seeLess = () => {
+    //shows previous 7 films
+    const seeLess = () => {
         setStartPosition(startPosition - 7)
     }
 

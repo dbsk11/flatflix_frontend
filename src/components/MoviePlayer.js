@@ -1,7 +1,7 @@
 import React from 'react';
 
 //renders movie player
-const MoviePlayer = () => {
+const MoviePlayer = (props) => {
     // video player to play movie
     // full screen option
     // pause and play option 

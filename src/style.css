@@ -9,3 +9,8 @@
 .genre {
   display: flex;
 }
+
+.viewpagepicture {
+  height: 400px;
+  width: 280px;
+}

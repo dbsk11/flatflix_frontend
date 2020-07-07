@@ -5,6 +5,11 @@ import GenreRow from './GenreRow'
 
 //renders movie tile rows
 const RowContainer = (props) => {
+    // set initial state
+    const [showMovie, setShowMovie] = useState(false)
+    const [movieObj, setMovieObj] = useState({})
+
+    // fetch data
     const [movies, setMovies] = useState([]);
     useEffect(()=>{
       fetch('http://localhost:3000/movies')
@@ -13,12 +18,21 @@ const RowContainer = (props) => {
         setMovies(data)
       })
     },[])
-  const genres = Object.keys(movies)
-  console.log(genres)
+
+    const genres = Object.keys(movies)
+
+    const showMoviePage = (movieObj) => {
+        setMovieObj(movieObj)
+    }
+
     return(
-        <div className='allmovies'>{genres.map(genre=>{
-            return <GenreRow genre={genre} movies={[...movies[`${genre}`]]} key={genre.id}/>
-        })}</div>
+        showMovie
+        ? 
+        <MovieView movie={movieObj}/>
+        :
+        <div className='allmovies'>{genres.map(genre=>
+            <GenreRow genre={genre} movies={[...movies[`${genre}`]]} key={genre.id} setShowMovie={setShowMovie} showMoviePage={showMoviePage}/>
+        )}</div>
     );
 };
 
