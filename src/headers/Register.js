@@ -1,9 +1,19 @@
 import React from 'react'
 
 const Register = (props) => {
+    const handleFormSubmit=(e)=>{
+        e.preventDefault();
+        const user = {
+            first_name:e.target.firstname.value,
+            last_name:e.target.lastname.value,
+            username:e.target.username.value,
+            password:e.target.password.value,
+        }
+        props.handleSubmit(user)
+    }
     return (
         <div>
-            <form>
+            <form onSubmit={e=>handleFormSubmit(e)}>
             <div className="registrationform">
                 <h1>Register</h1>
                 <div>

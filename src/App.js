@@ -12,9 +12,37 @@ import { BrowserRouter as Router, Route} from 'react-router-dom'
 
 const App = (props => {
     const [showMovie, setShowMovie] = useState(false)
+    const [user,setUser] = useState({user:{
+        id:null,
+        first_name:'',
+        last_name:'',
+        username:'',
+        user_videos:'',
+    }})
 
     const setShowMovie2 = (boolean) => {
         setShowMovie(boolean)
+    }
+
+    const handleRegister=(userObj)=>{
+        fetch('http://localhost:3000/users',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json',
+                accept:'application/json'
+            },
+            body:JSON.stringify(userObj)
+        }).then(r=>r.json()).then(data=>{
+            if(data.id){
+                setUser({user:data})
+            }else{
+                alert(data.message)
+            }
+            console.log(data)
+        })
+    }
+    const handleLogin= ()=>{
+
     }
 
     return(
@@ -25,9 +53,9 @@ const App = (props => {
             </div>
             <Route exact path="/" component={MainPage}/>
             <Route exact path="/movies" render={()=><RowContainer showMovie={showMovie} setShowMovie={setShowMovie2}/>} />
-            <Route exact path="/login" component={Login}/>
-            <Route exact path="/register" component={Register}/>
-            <Route exact path="/profile" component={Profile}/>
+            <Route exact path="/login" render={()=><Login handleSubmit={handleLogin}/>}/>
+            <Route exact path="/register" render={()=><Register handleSubmit={handleRegister}/>}/>
+            <Route exact path="/profile" render={()=><Profile user={user}/>}/>
         </div>
     )
 })
