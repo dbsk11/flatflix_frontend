@@ -21,20 +21,24 @@ const GenreRow = (props) => {
 
     //shows 7 more films
     const seeMore = () => {
-        setStartPosition(startPosition + 7) 
+        setStartPosition(startPosition + 6) 
     }
 
     //shows previous 7 films
     const seeLess = () => {
-        setStartPosition(startPosition - 7)
+        setStartPosition(startPosition - 6)
     }
 
     return(
         <div className="genre">
-            <h4>{props.genre}</h4>
-            <button onClick={seeLess}>Go back!</button>
-            {arrayOfMovies}
-            <button onClick={seeMore}>See More!</button>
+            <div className="genredisplay">
+                <h4>{props.genre}</h4>
+            </div> 
+            <div className="moviedisplay">
+                <button className="button" onClick={seeLess}>Go Back!</button>
+                {arrayOfMovies}
+                <button className="button" onClick={seeMore}>See More!</button>
+            </div>
         </div>
     );
 };

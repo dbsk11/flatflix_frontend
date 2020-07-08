@@ -10,10 +10,12 @@ const MovieView = (props) => {
     }
     
     return(
-        <div className="movieView">
-            <button onClick={handleClick}>Return To Movie List</button>
-            <h1 className="movieTitle">{props.movie.title}</h1>
-            <div className="movieSections">
+        <div>
+            <div className="movieview">
+                <button className="returnButton" onClick={handleClick}>Return To Movie List</button>
+                <h1 className="movieTitle">{props.movie.title}</h1>
+            </div>
+            <div className="moviesections">
                 <MoviePlayer movie={props.movie}/>
                 <MovieInfo movie={props.movie}/>
             </div>

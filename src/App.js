@@ -12,7 +12,7 @@ const App = (props => {
 
     return(
         <Router>
-            <div>
+            <div className="heading">
                 <Header />
                 <NavBar />
                 <Route exact path="/movies" component={()=><RowContainer/>} />
