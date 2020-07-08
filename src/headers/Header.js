@@ -3,10 +3,10 @@ import React from 'react';
 const Header = () => {
     // update image/logo
     // Flatflix name
+    let image = require("../images/Flatflix.png")
     return (
         <div className="header">
-            <h1>FLATFLIX</h1>
-            <img src="../images/logo" alt="Flatflix" id="main-header"/>
+            <img className="image" src={image} alt="Flatflix" id="main-header"/>
         </div>  
     )
 };

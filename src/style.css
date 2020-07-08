@@ -1,30 +1,36 @@
 /* main heading */
 .maincontainer {
   border-style: solid;
+  height: 97.4vh;
+  width: 99vw;
 }
 
 .heading {
   border-style: double;
+  border-color: #8797b2;
   width: 98.6vw;
 }
 
 .header {
   display: flex;
-  height: 10vh;
-  width: 98.6vw;
-  background: #e1eff6;
+  height: 15vh;
+  width: 98.8vw;
+  background: #01233f;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  color: #df2935;
-  font-size: 35px;
+}
+
+.image {
+  width: 300px;
+  height: 120px;
 }
 
 .navbar {
   display: flex;
   height: 5vh;
-  width: 98.6vw;
-  background: #e1eff6;
+  width: 98.8vw;
+  background: #01233f;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
@@ -34,9 +40,9 @@
 .form {
   display: flex;
   flex-direction: column;
-  height: 82vh;
-  width: 98.6vw;
-  background: #e1eff6;
+  height: 81vh;
+  width: 98.8vw;
+  background: #01233f;
   align-items: center;
   color: #587291;
   font-family: "Gill Sans", sans-serif;
@@ -46,9 +52,9 @@
 /* profile page */
 .profile {
   display: flex;
-  height: 82vh;
-  width: 98.6vw;
-  background: #e1eff6;
+  height: 81vh;
+  width: 98.8vw;
+  background: #01233f;
   flex-direction: column;
   align-items: center;
   border: double;
@@ -60,14 +66,17 @@
 .allmovies {
   display: flex;
   flex-direction: column;
-  width: 98.6vw;
-  background: #e1eff6;
+  width: 98.8vw;
+  height: 76.2vh;
+  background: #01233f;
   border: double;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .picture {
   height: 38.5vh;
-  width: 13vw;
+  width: 12vw;
   padding: 7px;
 }
 
@@ -82,7 +91,7 @@
   font-weight: 400px;
   font-size: 28px;
   font-style: normal;
-  color: #587291;
+  color: #dd0426;
   text-align: center;
   font-family: "Gill Sans", sans-serif;
   justify-content: flex-start;
@@ -95,17 +104,16 @@
   display: flex;
   flex-direction: row;
   width: 98.6vw;
-  padding: 80px;
-  height: 40vh;
   padding: 0px;
-  margin-left: 100px;
+  height: 40vh;
+  margin-left: 35px;
 }
 
 .button {
   display: flex;
   height: 40vh;
   width: 3vw;
-  background-color: #587291;
+  background-color: #8797b2;
   color: #f2fdff;
   text-align: center;
   display: inline-block;
@@ -154,19 +162,22 @@
 
 /* movie view page */
 .movieview {
-  background: #e1eff6;
+  background: #01233f;
   display: flex;
   flex-direction: column;
-  width: 97.8vw;
+  width: 98vw;
   height: 10vh;
   padding: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .moviesections {
-  background: #e1eff6;
+  background: #01233f;
   display: flex;
   flex-direction: row;
-  width: 97.8vw;
+  width: 98vw;
+  height: 62.5vh;
   padding: 10px;
 }
 
@@ -174,54 +185,64 @@
   display: flex;
   justify-content: center;
   font-weight: 400px;
-  font-size: 70px;
+  font-size: 50px;
   font-style: normal;
-  color: #140d4f;
+  color: #d7fff1;
   text-align: center;
   font-family: "Gill Sans", sans-serif;
-  justify-content: center;
-  align-items: center;
   margin-top: 0em;
   margin-bottom: 0em;
 }
 
-.returnButton {
-  display: flex;
-  width: 20vw;
-  background-color: #587291;
-  color: #f2fdff;
-  justify-content: center;
-  text-align: center;
-  display: inline-block;
-  font-size: 15px;
-  font-family: "Gill Sans", sans-serif;
+.movieTitle h1 {
+  margin-bottom: 0;
 }
 
 /* movie player */
 .player {
   display: flex;
   flex-direction: row;
-  height: 65vh;
+  height: 60vh;
   width: 50vw;
   border: solid;
   padding: 5px;
 }
 
 /* movie info  */
-.movieInfo {
+.movieinfo {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 5px;
   font-size: 18px;
   font-weight: normal;
-  width: 50vw;
-  height: 65vh;
-  overflow: scroll;
-  color: #140d4f;
-  font-family: "Gill Sans", sans-serif;
+  width: 48vw;
+  height: 60vh;
+  overflow-y: scroll;
+  color: #66ced6;
 }
 
 .viewpagepicture {
-  height: 200px;
-  width: 140px;
+  height: 280px;
+  width: 190px;
+}
+
+.moviedetails {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 20px;
+  font-family: "Gill Sans", sans-serif;
+  overflow-y: scroll;
+}
+
+.moviedetails h4 {
+  color: #ef6f6c;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.moviedetail p {
+  margin-bottom: 0;
+  margin-top: 0;
 }
