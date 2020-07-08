@@ -1,5 +1,4 @@
 import React from 'react';
-import SignedIn from './SignedIn'
  
 //renders Log In Form
 const Login = (props) => {
@@ -7,12 +6,6 @@ const Login = (props) => {
   // onSubmit/handleSubmit
   // update state in NavBar => Change Text
  
-  const isSignedIn = props.signedIn;
-  if (isSignedIn) {
-    return (
-      <SignedIn/>
-    );
-  }
   return  (
     <form>
         <div className="form">
