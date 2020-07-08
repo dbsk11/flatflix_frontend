@@ -7,8 +7,8 @@ const MovieCard = (props) => {
     // handleClick, onClick, onHover - for adding and removing movie from queue
 
     const handleClick = (evt) => {
-        props.setShowMovie(true)
         props.showMoviePage(props.movie)
+        props.setShowMovie(true)
     }
 
     return(

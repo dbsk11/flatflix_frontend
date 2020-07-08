@@ -21,6 +21,7 @@ const GenreRow = (props) => {
 
     //shows 7 more films
     const seeMore = () => {
+        props.showMoviePage("hello")
         setStartPosition(startPosition + 6) 
     }
 
@@ -28,7 +29,7 @@ const GenreRow = (props) => {
     const seeLess = () => {
         setStartPosition(startPosition - 6)
     }
-
+    
     return(
         <div className="genre">
             <div className="genredisplay">

@@ -7,13 +7,13 @@ const MovieInfo = (props) => {
     return(
         <div className="movieInfo">
             <img className="viewpagepicture" src={poster_url} alt={title} />
-            <h3>Director: {director}</h3>
-            <h3>Plot: {plot}</h3>
-            <h4>Year: {year}</h4>
-            <h4>Rating: {rating}</h4>
-            <h4>Runtime: {runtime}</h4>
-            <h4>Released: {released}</h4>
-            <h4>IMDB Rating: {imdbRating}</h4>
+            Director: {director}
+            Plot: {plot}
+            Year: {year}
+            Rating: {rating}
+            Runtime: {runtime}
+            Released: {released}
+            IMDB Rating: {imdbRating}
         </div>
     );
 };

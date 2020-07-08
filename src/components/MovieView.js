@@ -8,11 +8,10 @@ const MovieView = (props) => {
     const handleClick = (evt) => {
         props.setShowMovie(false)
     }
-    
+
     return(
         <div>
             <div className="movieview">
-                <button className="returnButton" onClick={handleClick}>Return To Movie List</button>
                 <h1 className="movieTitle">{props.movie.title}</h1>
             </div>
             <div className="moviesections">
