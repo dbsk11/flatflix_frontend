@@ -16,7 +16,7 @@ const Register = (props) => {
                 </div>
                 <div>
                     <label htmlFor="username">Desired Username: </label>
-                    <input type="text" name="username" placeholder="Username" />
+                    <input type="text" name="username"/>
                 </div>
                 <div>
                     <label htmlFor="password">Password: </label>
