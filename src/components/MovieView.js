@@ -15,7 +15,7 @@ const MovieView = (props) => {
                 <h1 className="movieTitle">{props.movie.title}</h1>
             </div>
             <div className="moviesections">
-                <MoviePlayer movie={props.movie}/>
+                <MoviePlayer movie={props.movie.youtube}/>
                 <MovieInfo movie={props.movie}/>
             </div>
         </div>
