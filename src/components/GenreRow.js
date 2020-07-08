@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import MovieCard from './MovieCard'
-import MovieView from './MovieView'
 
 //renders movie tile rows
 const GenreRow = (props) => {
@@ -10,7 +9,7 @@ const GenreRow = (props) => {
     const [startPosition, setStartPosition] = useState(0)
 
     //map through array to pull out individual movies
-    const arrayOfMovies = props.movies.slice(startPosition, startPosition + 6).map((moviePOJO) => {
+    const arrayOfMovies = props.movies.slice(startPosition, startPosition + 7).map((moviePOJO) => {
         return <MovieCard
             movie={moviePOJO}
             key={moviePOJO.id}
@@ -22,12 +21,12 @@ const GenreRow = (props) => {
     //shows 7 more films
     const seeMore = () => {
         props.showMoviePage("hello")
-        setStartPosition(startPosition + 6) 
+        setStartPosition(startPosition + 7) 
     }
 
     //shows previous 7 films
     const seeLess = () => {
-        setStartPosition(startPosition - 6)
+        setStartPosition(startPosition - 7)
     }
     
     return(
