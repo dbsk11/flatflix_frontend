@@ -55,7 +55,7 @@ const App = (props => {
             <Route exact path="/movies" render={()=><RowContainer showMovie={showMovie} setShowMovie={setShowMovie2}/>} />
             <Route exact path="/login" render={()=><Login handleSubmit={handleLogin}/>}/>
             <Route exact path="/register" render={()=><Register handleSubmit={handleRegister}/>}/>
-            <Route exact path="/profile" render={()=><Profile user={user}/>}/>
+            <Route exact path="/profile" render={user.id?()=><Profile user={user} />: <Login handleSubmit={handleLogin}/>}/>
         </div>
     )
 })
