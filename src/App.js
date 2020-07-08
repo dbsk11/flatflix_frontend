@@ -22,8 +22,8 @@ const App = (props => {
             <div className="heading">    
                 <Header />
                 <NavBar setShowMovie={setShowMovie2} />
-                {/* <MainPage /> */}
             </div>
+            <Route exact path="/" component={MainPage}/>
             <Route exact path="/movies" render={()=><RowContainer showMovie={showMovie} setShowMovie={setShowMovie2}/>} />
             <Route exact path="/login" component={Login}/>
             <Route exact path="/register" component={Register}/>

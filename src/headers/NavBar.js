@@ -30,7 +30,7 @@ const NavBar = (props) => {
             style={link}
             activeStyle={{ color: 'pink' }}
             onClick={handleClick}
-        >Register</NavLink>
+        >Sign Up</NavLink>
         <NavLink
             to="/login"
             exact
