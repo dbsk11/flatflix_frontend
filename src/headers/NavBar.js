@@ -15,6 +15,12 @@ const NavBar = (props) => {
         props.setShowMovie(false)
     }
     
+    const handleClickLogIn = (evt) => {
+        console.log(evt.target)
+        props.setSignIn(!props.signedIn)
+    }
+
+
     return(
         <div className="navbar">
         <NavLink 
@@ -36,7 +42,8 @@ const NavBar = (props) => {
             exact
             style={link}
             activeStyle={{ color: 'pink' }}
-        >Log In</NavLink>
+            onClick={handleClickLogIn}
+        >{props.signedIn ? "Log Out" : "Log In"}</NavLink>
         <NavLink 
             to="/profile"
             exact

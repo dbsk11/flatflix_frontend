@@ -8,6 +8,8 @@ const GenreRow = (props) => {
     //set initial state
     const [startPosition, setStartPosition] = useState(0)
 
+    const movieArrayLength = props.movies.length - 1
+
     //map through array to pull out individual movies
     const arrayOfMovies = props.movies.slice(startPosition, startPosition + 7).map((moviePOJO) => {
         return <MovieCard
