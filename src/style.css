@@ -36,29 +36,59 @@
   align-items: center;
 }
 
+/* registration page */
+.registrationform {
+  display: flex;
+  flex-direction: column;
+  height: 76.2vh;
+  width: 98.8vw;
+  background: #01233f;
+  align-items: center;
+  color: #ef6f6c;
+  font-family: "Gill Sans", sans-serif;
+  border: double;
+  border-color: black
+}
+
 /* login page */
 .form {
   display: flex;
   flex-direction: column;
-  height: 81vh;
+  height: 76.2vh;
   width: 98.8vw;
   background: #01233f;
   align-items: center;
-  color: #587291;
+  color: #ef6f6c;
   font-family: "Gill Sans", sans-serif;
   border: double;
+  border-color: black
 }
 
 /* profile page */
 .profile {
   display: flex;
+  height: 76.2vh;
+  width: 98.8vw;
+  background: #01233f;
+  flex-direction: column;
+  align-items: center;
+  border: double;
+  color: #ef6f6c;
+  font-family: "Gill Sans", sans-serif;
+  border-color: black
+}
+
+
+/* mainpage */
+.mainpage{
+  display: flex;
   height: 81vh;
   width: 98.8vw;
   background: #01233f;
   flex-direction: column;
   align-items: center;
   border: double;
-  color: #587291;
+  color: #D7FFF1;
   font-family: "Gill Sans", sans-serif;
 }
 

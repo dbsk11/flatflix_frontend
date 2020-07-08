@@ -24,6 +24,13 @@ const NavBar = (props) => {
             activeStyle={{ color: 'red' }}
             onClick={handleClick}
         >Movies</NavLink>
+        <NavLink 
+            to="/register"
+            exact
+            style={link}
+            activeStyle={{ color: 'red' }}
+            onClick={handleClick}
+        >Register</NavLink>
         <NavLink
             to="/login"
             exact

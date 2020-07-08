@@ -11,11 +11,11 @@ const Login = (props) => {
           <h1>Login</h1>
           <div>
             <label htmlFor="username">Username: </label>
-            <input type="text" name="username" placeholder="Username" />
+            <input type="text" name="username"/>
           </div>
           <div>
             <label htmlFor="password">Password: </label>
-            <input type="password" name="password" placeholder="Password" />
+            <input type="password" name="password"/>
           </div>
           <input type="submit" value="Login" />
         </div>
