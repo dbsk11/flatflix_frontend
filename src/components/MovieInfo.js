@@ -1,9 +1,8 @@
 import React from 'react';
 
-//renders movie info
 const MovieInfo = (props) => {
-    //displays information for selected movie 
     const {director, plot, year, rating, runtime, released, imdbRating, poster_url, title} = props.movie
+
     return(
         <div className="movieinfo">
             <div className="moviedetails">

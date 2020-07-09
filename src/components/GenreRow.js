@@ -1,14 +1,9 @@
 import React, {useState} from 'react';
-import MovieCard from './MovieCard'
+import MovieCard from './MovieCard';
 
-//renders movie tile rows
 const GenreRow = (props) => {
-    // need to add users queue
-
     //set initial state
-    const [startPosition, setStartPosition] = useState(0)
-
-    const movieArrayLength = props.movies.length - 1
+    const [startPosition, setStartPosition] = useState(0);
 
     //map through array to pull out individual movies
     const arrayOfMovies = props.movies.slice(startPosition, startPosition + 7).map((moviePOJO) => {
@@ -18,18 +13,18 @@ const GenreRow = (props) => {
             setShowMovie={props.setShowMovie}
             showMoviePage={props.showMoviePage}
         />
-    })
+    });
 
     //shows 7 more films
     const seeMore = () => {
         props.showMoviePage("hello")
         setStartPosition(startPosition + 7) 
-    }
+    };
 
     //shows previous 7 films
     const seeLess = () => {
         setStartPosition(startPosition - 7)
-    }
+    };
     
     return(
         <div className="genre">

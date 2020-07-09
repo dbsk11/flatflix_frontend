@@ -6,14 +6,13 @@ const link = {
     padding: '12px',
     margin: '0 6px 6px',
     color: 'aquamarine',
-}
+};
 
-//renders Navigation Bar
 const NavBar = (props) => {
-    // need to add conditional for Log In <=> Log Out
+    // changes state
     const handleClick = (evt) => {
         props.setShowMovie(false)
-    }
+    };
 
     return(
         <div className="navbar">
@@ -31,19 +30,22 @@ const NavBar = (props) => {
             activeStyle={{ color: 'pink' }}
             onClick={handleClick}
         >Sign Up</NavLink>
-{props.user.token ?
-        <NavLink
-            to="/logout"
-            exact
-            style={link}
-            activeStyle={{ color: 'pink' }}
-        >Log Out</NavLink>:
-        <NavLink
-            to="/login"
-            exact
-            style={link}
-            activeStyle={{ color: 'pink' }}
-        >Log In</NavLink>}
+        {props.user.token 
+            ?
+            <NavLink
+                to="/logout"
+                exact
+                style={link}
+                activeStyle={{ color: 'pink' }}
+            >Log Out</NavLink>
+            :
+            <NavLink
+                to="/login"
+                exact
+                style={link}
+                activeStyle={{ color: 'pink' }}
+            >Log In</NavLink>
+        }
         <NavLink 
             to="/profile"
             exact

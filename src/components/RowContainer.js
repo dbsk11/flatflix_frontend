@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import MovieView from './MovieView'
-import GenreRow from './GenreRow'
-import "../style.css"
+import MovieView from './MovieView';
+import GenreRow from './GenreRow';
+import "../style.css";
 
 let RowContainer = (props) => {
+    // sets initial state
     let [movieObj, setMovieObj] = useState({});
 
+    // fetches movies
     const [movies, setMovies] = useState([]);
     useEffect(() => {
         fetch('http://localhost:3000/movies')
@@ -16,8 +18,10 @@ let RowContainer = (props) => {
         })
     }, []);
 
+    // defines genres
     const genres = Object.keys(movies);
 
+    // changes state
     const showMoviePage = (movieObj) => {
         setMovieObj(movieObj)
     };
@@ -34,4 +38,4 @@ let RowContainer = (props) => {
     );
 };
 
-export default RowContainer
+export default RowContainer;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const MainPage = (props) => {
     return (
@@ -8,7 +8,7 @@ const MainPage = (props) => {
                 <h4>Free subscription</h4>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default MainPage
+export default MainPage;

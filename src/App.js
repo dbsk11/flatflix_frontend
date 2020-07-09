@@ -10,11 +10,12 @@ import Register from './headers/Register'
 import MainPage from './components/MainPage'
 import { useHistory } from "react-router-dom";
 
-import { BrowserRouter as Router, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 const App = (props => {
-    const [showMovie, setShowMovie] = useState(false)
     const history = useHistory();
+    // sets initial state
+    const [showMovie, setShowMovie] = useState(false);
     const [user,setUser] = useState({
         user:{
             id:0,
@@ -24,8 +25,9 @@ const App = (props => {
             user_videos:'',
         },
         token:'',
-    })
+    });
 
+    //fetch user data
     useEffect(()=>{
         if(localStorage.token){
             fetch('http://localhost:3000/users/stay_logged_in',{
@@ -44,23 +46,25 @@ const App = (props => {
                 }
             })
         }
-    },[])
+    },[]);
 
+    // updates state
     const setShowMovie2 = (boolean) => {
         setShowMovie(boolean)
-    }
+    };
 
+    // handles response of post methods
     const handleResponse=(data)=>{
-        
-        console.log(data)
         if(data.message){
             alert(data.message)
-        }else{
+        } else{
             localStorage.token = data.token
             setUser(data)
             history.push('/movies')
         }
-    }
+    };
+
+    // posts registration info
     const handleRegister=(userObj)=>{
         fetch('http://localhost:3000/users',{
             method:'POST',
@@ -70,7 +74,9 @@ const App = (props => {
             },
             body:JSON.stringify(userObj)
         }).then(r=>r.json()).then(handleResponse)
-    }
+    };
+
+    // posts login info
     const handleLogin= (userObj)=>{
         fetch('http://localhost:3000/users/login',{
             method:'POST',
@@ -80,7 +86,7 @@ const App = (props => {
             },
             body: JSON.stringify(userObj)
         }).then(r=>r.json()).then(handleResponse)
-    }
+    };
 
     return(
         <div className="maincontainer">
@@ -90,17 +96,17 @@ const App = (props => {
             </div>
             <Route exact path="/" component={MainPage}/>
             <Route exact path="/movies" render={()=><RowContainer showMovie={showMovie} setShowMovie={setShowMovie2}/>} />
-              {user.token ?
+            {user.token ?
                 <Route exact path="/logout" render={()=><Logout setUser={setUser} history={history}/>}/>
                 :
                 <Route exact path="/login" render={()=><Login handleLogin={handleLogin}/>}/>
-              }
+            }
             <Route exact path="/register" render={()=><Register handleRegister={handleRegister}/>}/>
             <Route exact path="/profile" render={()=>{
                 return user.token?<Profile user={user} /> : <Login handleLogin={handleLogin}/>
-                }}/>
+            }}/>
         </div>
-    )
-})
+    );
+});
 
 export default App;

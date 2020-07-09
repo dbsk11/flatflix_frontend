@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Register = (props) => {
     const handleFormSubmit=(e)=>{
@@ -10,7 +10,8 @@ const Register = (props) => {
             password:e.target.password.value,
         }
         props.handleRegister(user)
-    }
+    };
+
     return (
         <div>
             <form onSubmit={e=>handleFormSubmit(e)}>
@@ -39,4 +40,4 @@ const Register = (props) => {
     );
 };
 
-export default Register
+export default Register;

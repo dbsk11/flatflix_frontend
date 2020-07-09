@@ -1,7 +1,8 @@
 import React from 'react';
  
-
 const Logout = (props) => {
+    
+    // changes state
     const clearUser=()=>{
         localStorage.clear()
         props.setUser({
@@ -14,17 +15,15 @@ const Logout = (props) => {
             },
             token:'',
         })
-    }
+    };
 
-  return  (
-    <div>
-        {clearUser()}
-        {props.history.push('/login')}
-    </div>
+    return (
+        <div>
+            {clearUser()}
+            {props.history.push('/login')}
+        </div>
+    );
 
-  )
-
-    
 };
  
 export default Logout;

@@ -1,15 +1,11 @@
 import React, {useState} from 'react';
 
-//renders movie tiles
 const MovieCard = (props) => {
-    // post request to add movie to queue
-    // delete request to remove movie from queue
-    // handleClick, onClick, onHover - for adding and removing movie from queue
-
+    // triggered if a movie has been clicked
     const handleClick = (evt) => {
         props.showMoviePage(props.movie)
         props.setShowMovie(true)
-    }
+    };
 
     return(
         <div className='movieCard' onClick={handleClick}>

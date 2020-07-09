@@ -1,13 +1,12 @@
 import React from 'react';
-import MoviePlayer from './MoviePlayer'
-import MovieInfo from './MovieInfo'
+import MoviePlayer from './MoviePlayer';
+import MovieInfo from './MovieInfo';
 
-//renders individual movie page
 const MovieView = (props) => {
-    
+    // triggers change of state
     const handleClick = (evt) => {
         props.setShowMovie(false)
-    }
+    };
 
     return(
         <div>
