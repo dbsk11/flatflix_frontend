@@ -9,7 +9,7 @@ const Register = (props) => {
             username:e.target.username.value,
             password:e.target.password.value,
         }
-        props.handleSubmit(user)
+        props.handleRegister(user)
     }
     return (
         <div>

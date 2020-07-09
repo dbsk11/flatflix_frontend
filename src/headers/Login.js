@@ -5,9 +5,16 @@ const Login = (props) => {
   // state:  logged in 
   // onSubmit/handleSubmit
   // update state in NavBar => Change Text
- 
+ const handleFormSubmit=(e)=>{
+   e.preventDefault();
+   const user={
+     username:e.target.username.value,
+     password:e.target.password.value,
+   }
+   props.handleLogin(user)
+ }
   return  (
-    <form>
+    <form onSubmit={e=>handleFormSubmit(e)}>
         <div className="form">
           <h1>Login</h1>
           <div>
