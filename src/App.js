@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React, { useState, useEffect }  from 'react';
 import './App.css';
 import Header from './headers/Header';
 import NavBar from './headers/NavBar';
@@ -14,25 +14,50 @@ import { BrowserRouter as Router, Route} from 'react-router-dom'
 const App = (props => {
     const [showMovie, setShowMovie] = useState(false)
     const history = useHistory();
-    const [user,setUser] = useState({user:{
-        id:0,
-        first_name:'',
-        last_name:'',
-        username:'',
-        user_videos:'',
-    }})
+    const [user,setUser] = useState({
+        user:{
+            id:0,
+            first_name:'',
+            last_name:'',
+            username:'',
+            user_videos:'',
+        },
+        token:'',
+    })
+
+    useEffect(()=>{
+        if(localStorage.token){
+            fetch('http://localhost:3000/users/stay_logged_in',{
+                headers:{
+                    Authorization:`Bearer ${localStorage.token}`
+                }
+            })
+            .then(r=>r.json())
+            .then(data=>{
+                console.log(data)
+                if(data.message){
+                    alert(data.message)
+                }else{
+                    localStorage.token = data.token
+                    setUser(data)
+                }
+            })
+        }
+    },[])
 
     const setShowMovie2 = (boolean) => {
         setShowMovie(boolean)
     }
 
     const handleResponse=(data)=>{
-        if(data.id){
-            setUser({user:data})
-            history.push('/movies')
-            console.log(data)
-        }else{
+        
+        console.log(data)
+        if(data.message){
             alert(data.message)
+        }else{
+            localStorage.token = data.token
+            setUser(data)
+            history.push('/movies')
         }
     }
     const handleRegister=(userObj)=>{
@@ -68,7 +93,7 @@ const App = (props => {
             <Route exact path="/register" render={()=><Register handleRegister={handleRegister}/>}/>
             <Route exact path="/profile" render={()=>{
                 console.log(user)
-                return user.user.id?<Profile user={user} /> : <Login handleLogin={handleLogin}/>
+                return user.token?<Profile user={user} /> : <Login handleLogin={handleLogin}/>
                 }}/>
         </div>
     )

@@ -11,6 +11,7 @@ let RowContainer = (props) => {
         fetch('http://localhost:3000/movies')
         .then(r => r.json())
         .then(data => {
+            console.log(data)
             setMovies(data)
         })
     }, []);
@@ -26,7 +27,8 @@ let RowContainer = (props) => {
         ?
         <MovieView movie={movieObj} setShowMovie={props.setShowMovie}/>
         :
-        <div className='allmovies'>{genres.map(genre=>
+        <div className='allmovies'>
+            {genres.map(genre=>
             <GenreRow genre={genre} movies={[...movies[`${genre}`]]} key={genre} setShowMovie={props.setShowMovie} showMoviePage={showMoviePage}/>
         )}</div>
     );
