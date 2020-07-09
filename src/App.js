@@ -37,7 +37,6 @@ const App = (props => {
             })
             .then(r=>r.json())
             .then(data=>{
-                console.log(data)
                 if(data.message){
                     alert(data.message)
                 }else{

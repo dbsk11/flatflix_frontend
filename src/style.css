@@ -44,10 +44,14 @@
   width: 98.8vw;
   background: #01233f;
   align-items: center;
-  color: #ef6f6c;
+  color: #8797b2;
   font-family: "Gill Sans", sans-serif;
   border: double;
   border-color: black
+}
+
+.registrationform h1 {
+  color: #d7fff1;
 }
 
 /* login page */
@@ -58,10 +62,14 @@
   width: 98.8vw;
   background: #01233f;
   align-items: center;
-  color: #ef6f6c;
+  color: #8797b2;
   font-family: "Gill Sans", sans-serif;
   border: double;
   border-color: black
+}
+
+.form h1 {
+  color: #d7fff1
 }
 
 /* signed in page */
@@ -88,7 +96,6 @@
   align-items: center;
 }
 
-
 /* profile page */
 .profile {
   display: flex;
@@ -98,11 +105,26 @@
   flex-direction: column;
   align-items: center;
   border: double;
-  color: #ef6f6c;
+  color: #d7fff1;
   font-family: "Gill Sans", sans-serif;
   border-color: black
 }
 
+.profile h1 {
+  font-size: 35px;
+}
+
+.profile h4 {
+  color: #ef6f6c;
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+.profile p {
+  color: #66ced6;
+  color: d7fff1;
+  font-size: 18px
+}
 
 /* mainpage */
 .mainpage{

@@ -13,7 +13,6 @@ let RowContainer = (props) => {
         fetch('http://localhost:3000/movies')
         .then(r => r.json())
         .then(data => {
-            console.log(data)
             setMovies(data)
         })
     }, []);

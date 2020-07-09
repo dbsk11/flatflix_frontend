@@ -3,11 +3,6 @@ import MoviePlayer from './MoviePlayer';
 import MovieInfo from './MovieInfo';
 
 const MovieView = (props) => {
-    // triggers change of state
-    const handleClick = (evt) => {
-        props.setShowMovie(false)
-    };
-
     return(
         <div>
             <div className="movieview">
