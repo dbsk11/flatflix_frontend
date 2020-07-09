@@ -31,12 +31,19 @@ const NavBar = (props) => {
             activeStyle={{ color: 'pink' }}
             onClick={handleClick}
         >Sign Up</NavLink>
+{props.user.token ?
+        <NavLink
+            to="/logout"
+            exact
+            style={link}
+            activeStyle={{ color: 'pink' }}
+        >Log Out</NavLink>:
         <NavLink
             to="/login"
             exact
             style={link}
             activeStyle={{ color: 'pink' }}
-        >{props.user.id? "Log Out" : "Log In"}</NavLink>
+        >Log In</NavLink>}
         <NavLink 
             to="/profile"
             exact

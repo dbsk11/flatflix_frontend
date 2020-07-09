@@ -4,6 +4,7 @@ import Header from './headers/Header';
 import NavBar from './headers/NavBar';
 import RowContainer from './components/RowContainer';
 import Login from './headers/Login';
+import Logout from './headers/Logout';
 import Profile from './headers/Profile';
 import Register from './headers/Register'
 import MainPage from './components/MainPage'
@@ -89,10 +90,13 @@ const App = (props => {
             </div>
             <Route exact path="/" component={MainPage}/>
             <Route exact path="/movies" render={()=><RowContainer showMovie={showMovie} setShowMovie={setShowMovie2}/>} />
-            <Route exact path="/login" render={()=><Login handleLogin={handleLogin}/>}/>
+              {user.token ?
+                <Route exact path="/logout" render={()=><Logout setUser={setUser} history={history}/>}/>
+                :
+                <Route exact path="/login" render={()=><Login handleLogin={handleLogin}/>}/>
+              }
             <Route exact path="/register" render={()=><Register handleRegister={handleRegister}/>}/>
             <Route exact path="/profile" render={()=>{
-                console.log(user)
                 return user.token?<Profile user={user} /> : <Login handleLogin={handleLogin}/>
                 }}/>
         </div>
