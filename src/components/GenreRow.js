@@ -32,17 +32,31 @@ const GenreRow = (props) => {
         );
     } 
 
-    //shows 7 more films
+    //shows 1 more film
     const seeMore = () => {
-        props.showMoviePage("hello")
-        setStartPosition(startPosition + 7) 
+        let arrayLength = props.movies.length - 1
+        if ((startPosition + 7) <= arrayLength){
+            setStartPosition(startPosition + 1) 
+        } 
+        console.log(arrayLength)
+        if ((startPosition + 7) > arrayLength) {
+            setStartPosition(0)
+        };
     };
 
-    //shows previous 7 films
+    // const seeMore = () => {
+    //     setStartPosition (startPosition + 1)
+    // };
+
+    // shows previous film
     const seeLess = () => {
-        setStartPosition(startPosition - 7)
+        setStartPosition(startPosition-1)
     };
     
+    // const seeLess = () => {
+    //     setStartPosition(startPosition - 1)
+    // };
+
     return(
         <div className="genre">
             <div className="genredisplay">
