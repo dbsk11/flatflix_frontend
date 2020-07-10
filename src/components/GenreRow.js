@@ -21,6 +21,7 @@ const GenreRow = (props) => {
         if ((startPosition + 7) <= arrayLength){
             setStartPosition(startPosition + 1) 
         } 
+        console.log(arrayLength)
         if ((startPosition + 7) > arrayLength) {
             setStartPosition(0)
         };
@@ -32,11 +33,7 @@ const GenreRow = (props) => {
 
     // shows previous film
     const seeLess = () => {
-        let arrayLength = props.movies.length - 1
-        if (startPosition <= arrayLength){
-            setStartPosition(arrayLength-6)
-            console.log(startPosition)
-        } 
+        setStartPosition(startPosition-1)
     };
     
     // const seeLess = () => {
