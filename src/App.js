@@ -8,6 +8,7 @@ import Logout from './headers/Logout';
 import Profile from './headers/Profile';
 import Register from './headers/Register'
 import MainPage from './components/MainPage'
+import SignedIn from './headers/SignedIn'
 import { useHistory } from "react-router-dom";
 
 import { BrowserRouter as Router, Route} from 'react-router-dom';
@@ -100,7 +101,9 @@ const App = (props => {
                 :
                 <Route exact path="/login" render={()=><Login handleLogin={handleLogin}/>}/>
             }
-            <Route exact path="/register" render={()=><Register handleRegister={handleRegister}/>}/>
+            <Route exact path="/register" render={()=>{
+                return user.token? <SignedIn /> : <Register handleRegister={handleRegister}/>
+            }}/>
             <Route exact path="/profile" render={()=>{
                 return user.token?<Profile user={user} /> : <Login handleLogin={handleLogin}/>
             }}/>
